@@ -53,7 +53,7 @@ export const reels = [
 ];
 
 export const testimonials = [
-  { name: 'Ayesha Khan', text: 'Golden Oud feels premium from the first spray. Projection is strong and the bottle looks elegant.', image: 'https://randomuser.me/api/portraits/women/44.jpg' },
-  { name: 'Rahul Mehta', text: 'Ocean Veil became my daily office fragrance. Clean, fresh, and never too loud.', image: 'https://randomuser.me/api/portraits/men/32.jpg' },
-  { name: 'Sana Ali', text: 'The combo pack made a beautiful gift. Packaging and fragrance both felt luxurious.', image: 'https://randomuser.me/api/portraits/women/68.jpg' }
+  { name: 'Ananya Sharma', text: 'Golden Oud has a rich, elegant fragrance and stays beautifully through my evening plans. The bottle also looks so premium.', image: 'https://images.unsplash.com/photo-1631606929991-200006582c09?auto=format&fit=crop&w=240&h=240&q=85' },
+  { name: 'Arjun Mehta', text: 'Ocean Veil is perfect for the office—fresh, clean and noticeable without ever feeling too strong. It is now my daily choice.', image: 'https://images.unsplash.com/photo-1704722408439-fb23ed6187ea?auto=format&fit=crop&w=240&h=240&q=85' },
+  { name: 'Priya Nair', text: 'I gifted the fragrance combo to my sister and she loved it. The packaging, scent and overall presentation felt truly luxurious.', image: 'https://images.unsplash.com/photo-1669829528850-959d7b08278b?auto=format&fit=crop&w=240&h=240&q=85' }
 ];
