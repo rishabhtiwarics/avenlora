@@ -1,6 +1,17 @@
 import React from 'react';
-export default function ImageBanner({ images, className = '' }) {
-  const classes = ['image-banner', images.length > 1 ? 'split' : '', className].filter(Boolean).join(' ');
+import { Link } from 'react-router-dom';
 
-  return <section className={classes}>{images.map((image, index) => <img src={image} alt="Avenlora perfume banner" key={index} />)}</section>;
+export default function ImageBanner({ images, className = '', to, fullWidth = false }) {
+  const classes = ['image-banner', images.length > 1 ? 'split' : '', className].filter(Boolean).join(' ');
+  const fullWidthStyle = fullWidth ? { width: '100vw', maxWidth: '100vw', marginLeft: 'calc(50% - 50vw)' } : undefined;
+
+  return (
+    <section className={classes} style={fullWidthStyle}>
+      {images.map((image, index) => {
+        const banner = <img src={image} alt="Discover Avenlora perfumes" loading="lazy" decoding="async" />;
+
+        return to ? <Link className="image-banner-link" to={to} aria-label="Shop Avenlora perfumes" key={index}>{banner}</Link> : <React.Fragment key={index}>{banner}</React.Fragment>;
+      })}
+    </section>
+  );
 }

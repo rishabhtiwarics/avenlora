@@ -2,7 +2,7 @@ import React from 'react';
 import { Menu, Search, UserRound, ShoppingBag, X, LayoutDashboard, LogOut, ShieldCheck, Facebook, Instagram } from 'lucide-react';
 import { NavLink, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { products, brandAssets, categories } from '../../data/products.js';
+import { products, brandAssets, categories, testimonials } from '../../data/products.js';
 import ProductCard from '../shop/ProductCard.jsx';
 import { useCart } from '../../context/CartContext.jsx';
 
@@ -84,7 +84,7 @@ function UserPanel({ compact = false }) {
   }
 
   if (role === 'user') {
-    return <div className={`user-panel ${compact ? 'compact' : ''}`}><span className="eyebrow">User Login</span><div className="user-row"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=85" alt="User" /><div><strong>Ayesha Khan</strong><small>ayesha@avenlora.com</small></div></div><Link to="/profile" className="user-link"><UserRound size={17} /> User Profile</Link><button className="logout-btn" onClick={logout}><LogOut size={17} /> Logout</button></div>;
+    return <div className={`user-panel ${compact ? 'compact' : ''}`}><span className="eyebrow">User Login</span><div className="user-row"><img src={testimonials[0].image} alt="User" /><div><strong>Ayesha Khan</strong><small>ayesha@avenlora.com</small></div></div><Link to="/profile" className="user-link"><UserRound size={17} /> User Profile</Link><button className="logout-btn" onClick={logout}><LogOut size={17} /> Logout</button></div>;
   }
 
   return <div className={`user-panel ${compact ? 'compact' : ''}`}><span className="eyebrow">My Account</span><h3>Login to your Avenlora account</h3><p>Access orders, saved perfumes, and faster checkout.</p><div className="auth-actions"><Link to="/auth/login" className="primary-btn">Login</Link><Link to="/auth/register" className="light-btn">Register</Link></div></div>;

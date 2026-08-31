@@ -33,8 +33,6 @@ const cards = [
   }
 ];
 
-const centerCard = cards.find((card) => card.isCenter);
-
 function StoryHeroMedia({ card, decorative = false }) {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -90,41 +88,6 @@ export default function StoryHero() {
     const ctx = gsap.context(() => {
       const mm = gsap.matchMedia();
 
-      mm.add('(min-width: 769px)', () => {
-        const timeline = gsap.timeline({
-          scrollTrigger: {
-            trigger: hero,
-            start: 'top top+=96',
-            end: '+=420',
-            scrub: 0.2,
-            invalidateOnRefresh: true,
-            snap: {
-              snapTo: (value, self) => (self.direction > 0 ? 1 : 0),
-              duration: { min: 0.22, max: 0.38 },
-              delay: 0.01,
-              ease: 'power2.out'
-            }
-          }
-        });
-
-        timeline
-          .set('.story-hero-card-center', { autoAlpha: 1 })
-          .fromTo('.story-hero-card-left, .story-hero-card-right',
-            { autoAlpha: 0, yPercent: 105, scale: 0.985 },
-            { autoAlpha: 1, yPercent: 0, scale: 1, duration: 0.45, ease: 'none' },
-            0
-          )
-          .fromTo('.story-hero-cinematic',
-            { autoAlpha: 1, clipPath: 'inset(0% 0% 0% 0%)' },
-            { autoAlpha: 0, clipPath: 'inset(0% 33.92% 0% 33.92%)', duration: 0.45, ease: 'none' },
-            0
-          )
-          .to('.story-hero-cinematic .story-hero-card-image', { scale: 1.035, duration: 0.45, ease: 'none' }, 0)
-          .to('.story-hero-cinematic .story-hero-center-copy', { yPercent: -4, scale: 0.985, duration: 0.45, ease: 'none' }, 0);
-
-        return () => timeline.scrollTrigger?.kill();
-      });
-
       mm.add('(max-width: 768px)', () => {
         gsap.set('.story-hero-cinematic,.story-hero-card,.story-hero-card-image,.story-hero-center-copy', {
           clearProps: 'all'
@@ -164,16 +127,6 @@ export default function StoryHero() {
             </article>
           ))}
         </div>
-
-        <article className="story-hero-cinematic" aria-label={centerCard.title}>
-          <StoryHeroMedia card={centerCard} decorative />
-          <div className="story-hero-card-shade" />
-          <div className="story-hero-center-copy">
-            <div className="story-hero-eyebrow">{centerCard.eyebrow}</div>
-            <h2 className="story-hero-title">{centerCard.title}</h2>
-            <Link to="/shop" className="story-hero-cta">Discover</Link>
-          </div>
-        </article>
       </div>
     </section>
   );

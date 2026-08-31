@@ -2,10 +2,12 @@ import React from 'react';
 import { Facebook, Instagram, Mail, MapPin, Phone, Youtube } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { brandAssets, categories } from '../../data/products.js';
+import amazonLogo from '../../img/amazon-logo.png';
+import flipkartLogo from '../../img/flipkart-logo.png';
 
 const BRANDS = [
-  { name: 'Amazon.in', img: 'https://krishnaayurved.com/cdn/shop/files/ka-amzin-logo.png?v=1775421770&width=110' },
-  { name: 'Flipkart', img: 'https://krishnaayurved.com/cdn/shop/files/ka-flipk-logo.png?v=1775421768&width=110' }
+  { name: 'Amazon.in', img: amazonLogo },
+  { name: 'Flipkart', img: flipkartLogo }
 ];
 
 

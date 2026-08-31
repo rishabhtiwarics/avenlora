@@ -49,10 +49,19 @@ export default function Testimonials() {
           </article>
         ))}
       </div>
-      <div className="hero-dots static testimonial-dots" aria-label="Testimonials navigation">
-        <button aria-label="Previous testimonial" onClick={() => move(-1)} />
-        <button className="active" aria-label="Active testimonial" onClick={() => move(0)} />
-        <button aria-label="Next testimonial" onClick={() => move(1)} />
+      <div className="testimonial-pagination" aria-label="Testimonials navigation">
+        {testimonials.map((testimonial, index) => (
+          <button
+            type="button"
+            className={index === active ? 'active' : ''}
+            key={testimonial.name}
+            aria-label={`Show testimonial ${index + 1}`}
+            aria-current={index === active ? 'true' : undefined}
+            onClick={() => setActive(index)}
+          >
+            {String(index + 1).padStart(2, '0')}
+          </button>
+        ))}
       </div>
     </section>
   );
