@@ -103,23 +103,6 @@ export default function StoryHero() {
         return () => trigger.kill();
       });
 
-      mm.add('(max-width: 768px)', () => {
-        gsap.set('.story-hero-cinematic,.story-hero-card,.story-hero-card-image,.story-hero-center-copy', {
-          clearProps: 'all'
-        });
-        gsap.from('.story-hero-card', {
-          scrollTrigger: {
-            trigger: hero,
-            start: 'top 72%'
-          },
-          autoAlpha: 0,
-          y: 28,
-          stagger: 0.12,
-          duration: 0.72,
-          ease: 'power2.out'
-        });
-      });
-
       return () => mm.revert();
     }, hero);
 
