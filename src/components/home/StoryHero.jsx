@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { Pause, Play } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import banner2 from '../../img/bnner2.jpeg';
-import banner3 from '../../img/bnner3.jpeg';
-import productPoster from '../../img/productimg1.jpeg';
+import leftCardImage from '../../img/instgramimg/ins3.jpeg';
+import centerCardImage from '../../img/instgramimg/ins5.jpeg';
+import rightCardImage from '../../img/instgramimg/ins2.jpeg';
 import heroVideo from '../../img/VideoSection-video.mp4';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -13,13 +13,13 @@ gsap.registerPlugin(ScrollTrigger);
 const cards = [
   {
     className: 'story-hero-card-left',
-    image: banner2,
+    image: leftCardImage,
     title: 'A sun-kissed woody trail',
     eyebrow: 'Avenlora Signature'
   },
   {
     className: 'story-hero-card-center',
-    poster: productPoster,
+    poster: centerCardImage,
     video: heroVideo,
     title: 'Avenlora, crafted beyond reason',
     eyebrow: 'New Fragrance Story',
@@ -27,7 +27,7 @@ const cards = [
   },
   {
     className: 'story-hero-card-right',
-    image: banner3,
+    image: rightCardImage,
     title: 'A bittersweet amber fragrance',
     eyebrow: 'Premium Perfume'
   }
@@ -137,7 +137,7 @@ export default function StoryHero() {
               <div className={card.isCenter ? 'story-hero-center-copy' : 'story-hero-card-caption'}>
                 <div className="story-hero-eyebrow">{card.eyebrow}</div>
                 {card.isCenter ? <h2 className="story-hero-title">{card.title}</h2> : <h3>{card.title}</h3>}
-                <Link to="/shop" className="story-hero-cta">Discover</Link>
+                <Link to="/shop" className="story-hero-cta">Shop Now</Link>
               </div>
             </article>
           ))}
@@ -149,7 +149,7 @@ export default function StoryHero() {
           <div className="story-hero-center-copy">
             <div className="story-hero-eyebrow">{centerCard.eyebrow}</div>
             <h2 className="story-hero-title">{centerCard.title}</h2>
-            <Link to="/shop" className="story-hero-cta">Discover</Link>
+            <Link to="/shop" className="story-hero-cta">Shop Now</Link>
           </div>
         </article>
       </div>

@@ -14,9 +14,6 @@ import category1 from '../img/categories/categorie1.jpeg';
 import category2 from '../img/categories/categorie2.jpeg';
 import category3 from '../img/categories/categorie3.jpeg';
 import category4 from '../img/categories/categorie4.jpeg';
-import testimonial1 from '../img/instgramimg/inst1.png';
-import testimonial2 from '../img/instgramimg/inst2.png';
-import testimonial3 from '../img/instgramimg/inst3.png';
 
 export const brandAssets = {
   blackLogo,
@@ -56,7 +53,7 @@ export const reels = [
 ];
 
 export const testimonials = [
-  { name: 'Ayesha Khan', text: 'Golden Oud feels premium from the first spray. Projection is strong and the bottle looks elegant.', image: testimonial1 },
-  { name: 'Rahul Mehta', text: 'Ocean Veil became my daily office fragrance. Clean, fresh, and never too loud.', image: testimonial2 },
-  { name: 'Sana Ali', text: 'The combo pack made a beautiful gift. Packaging and fragrance both felt luxurious.', image: testimonial3 }
+  { name: 'Ayesha Khan', text: 'Golden Oud feels premium from the first spray. Projection is strong and the bottle looks elegant.', image: 'https://randomuser.me/api/portraits/women/44.jpg' },
+  { name: 'Rahul Mehta', text: 'Ocean Veil became my daily office fragrance. Clean, fresh, and never too loud.', image: 'https://randomuser.me/api/portraits/men/32.jpg' },
+  { name: 'Sana Ali', text: 'The combo pack made a beautiful gift. Packaging and fragrance both felt luxurious.', image: 'https://randomuser.me/api/portraits/women/68.jpg' }
 ];
