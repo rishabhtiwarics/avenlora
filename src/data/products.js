@@ -5,6 +5,8 @@ import whiteLogo from '../img/avenlora_white_logo.png';
 import mainLogo from '../img/avenlora-main-logo.png';
 import middleBanner1 from '../img/middlebennr1.jpeg';
 import middleBanner2 from '../img/middlebennr2.jpeg';
+import mobileMiddleBanner1 from '../img/mobile-middlebennr1.jpeg';
+import mobileMiddleBanner2 from '../img/mobile-middlebennr2.jpeg';
 import productImg1 from '../img/productimg1.jpeg';
 import productImg2 from '../img/productimg2.jpeg';
 import productImg3 from '../img/productimg3.jpeg';
@@ -22,7 +24,9 @@ export const brandAssets = {
   bottleLine,
   amberSet,
   middleBanner1,
-  middleBanner2
+  middleBanner2,
+  mobileMiddleBanner1,
+  mobileMiddleBanner2
 };
 
 export const categories = [
