@@ -33,6 +33,8 @@ const cards = [
   }
 ];
 
+const centerCard = cards.find((card) => card.isCenter);
+
 function StoryHeroMedia({ card, decorative = false }) {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -80,6 +82,7 @@ function StoryHeroMedia({ card, decorative = false }) {
 
 export default function StoryHero() {
   const heroRef = useRef(null);
+  const [isRevealed, setIsRevealed] = useState(false);
 
   useLayoutEffect(() => {
     const hero = heroRef.current;
@@ -87,6 +90,18 @@ export default function StoryHero() {
 
     const ctx = gsap.context(() => {
       const mm = gsap.matchMedia();
+
+      mm.add('(min-width: 769px)', () => {
+        const trigger = ScrollTrigger.create({
+          trigger: hero,
+          start: 'top top+=96',
+          end: '+=420',
+          onEnter: () => setIsRevealed(true),
+          onLeaveBack: () => setIsRevealed(false)
+        });
+
+        return () => trigger.kill();
+      });
 
       mm.add('(max-width: 768px)', () => {
         gsap.set('.story-hero-cinematic,.story-hero-card,.story-hero-card-image,.story-hero-center-copy', {
@@ -112,7 +127,7 @@ export default function StoryHero() {
   }, []);
 
   return (
-    <section className="story-hero" ref={heroRef}>
+    <section className={`story-hero${isRevealed ? ' is-revealed' : ''}`} ref={heroRef}>
       <div className="story-hero-stage">
         <div className="story-hero-grid" aria-hidden="false">
           {cards.map((card) => (
@@ -127,6 +142,16 @@ export default function StoryHero() {
             </article>
           ))}
         </div>
+
+        <article className="story-hero-cinematic" aria-label={centerCard.title}>
+          <StoryHeroMedia card={centerCard} decorative />
+          <div className="story-hero-card-shade" />
+          <div className="story-hero-center-copy">
+            <div className="story-hero-eyebrow">{centerCard.eyebrow}</div>
+            <h2 className="story-hero-title">{centerCard.title}</h2>
+            <Link to="/shop" className="story-hero-cta">Discover</Link>
+          </div>
+        </article>
       </div>
     </section>
   );

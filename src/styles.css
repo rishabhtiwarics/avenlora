@@ -398,13 +398,15 @@ textarea { min-height:130px; resize:vertical; }
   }
 }
 
-.story-hero { position:relative; width:100%; min-height:900px; padding:40px; background:#fff; overflow:clip; isolation:isolate; }
+.story-hero { position:relative; width:100%; min-height:max(1180px, calc(100vh + 420px)); padding:40px; background:#fff; overflow:clip; isolation:isolate; }
 .story-hero-stage { position:sticky; top:96px; z-index:1; width:100%; min-height:680px; height:calc(88vh - 104px); overflow:hidden; background:#fff; isolation:isolate; }
 .story-hero-grid { position:absolute; inset:0; z-index:1; display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:24px; width:100%; height:100%; padding:0; }
 .story-hero-card, .story-hero-cinematic { position:relative; min-width:0; height:100%; overflow:hidden; background:#080706; transform:translate3d(0,0,0); }
-.story-hero-card-left, .story-hero-card-right { opacity:1; visibility:visible; transform:translate3d(0,0,0); }
+.story-hero-card-left, .story-hero-card-right { opacity:0; visibility:hidden; transform:translate3d(0,105%,0) scale(.985); transition:opacity .42s ease, visibility .42s ease, transform .52s cubic-bezier(.22,1,.36,1); }
+.story-hero.is-revealed .story-hero-card-left, .story-hero.is-revealed .story-hero-card-right { opacity:1; visibility:visible; transform:translate3d(0,0,0) scale(1); }
 .story-hero-card-center { opacity:1; visibility:visible; }
-.story-hero-cinematic { position:absolute; inset:0; z-index:3; opacity:1; visibility:visible; clip-path:inset(0% 0% 0% 0%); will-change:clip-path, opacity; }
+.story-hero-cinematic { position:absolute; inset:0; z-index:3; opacity:1; visibility:visible; transition:opacity .38s ease, visibility .38s ease; }
+.story-hero.is-revealed .story-hero-cinematic { opacity:0; visibility:hidden; pointer-events:none; }
 .story-hero-card-image { display:block; width:100%; height:100%; object-fit:cover; object-position:center; transform-origin:center; will-change:transform; }
 .story-hero-card-shade { position:absolute; inset:0; pointer-events:none; background:linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.48)); }
 .story-hero-center-card .story-hero-card-shade, .story-hero-cinematic .story-hero-card-shade { background:linear-gradient(90deg, rgba(0,0,0,.24), rgba(0,0,0,.18) 32%, rgba(0,0,0,.66) 78%, rgba(0,0,0,.82)); }
@@ -423,6 +425,6 @@ textarea { min-height:130px; resize:vertical; }
 .story-hero-video-play:hover { background:rgba(0,0,0,.68); color:#f5c76b; }
 .story-hero-video-play:active { transform:scale(.94); }
 .story-hero-video-play svg { flex:0 0 auto; }
-@media (max-width: 1024px) { .story-hero { min-height:820px; padding:28px; } .story-hero-stage { top:84px; min-height:620px; height:calc(82vh - 80px); } .story-hero-title { font-size:clamp(32px, 5vw, 52px); max-width:min(560px, 78vw); } }
+@media (max-width: 1024px) { .story-hero { min-height:max(1100px, calc(100vh + 360px)); padding:28px; } .story-hero-stage { top:84px; min-height:620px; height:calc(82vh - 80px); } .story-hero-title { font-size:clamp(32px, 5vw, 52px); max-width:min(560px, 78vw); } }
 @media (max-width: 768px) { .story-hero { min-height:0; padding:12px; overflow:hidden; } .story-hero-stage { position:relative; top:auto; height:auto; min-height:0; overflow:visible; background:#fff; box-shadow:none; } .story-hero-grid { position:relative; display:grid; grid-template-columns:1fr; gap:12px; height:auto; } .story-hero-cinematic { display:none; } .story-hero-card, .story-hero-card-left, .story-hero-card-right, .story-hero-card-center { position:relative; inset:auto; width:100%; height:50vh; min-height:300px; opacity:1; visibility:visible; transform:none; } .story-hero-center-card { order:-1; } .story-hero-center-copy { width:min(88%, 430px); } .story-hero-center-card .story-hero-center-copy { width:min(84%, 390px); max-width:390px; } .story-hero-eyebrow { font-size:clamp(10px, 1.8vw, 12px); margin-bottom:12px; } .story-hero-title { font-size:clamp(29px, 7.2vw, 40px); max-width:100%; line-height:1.06; margin-bottom:20px; } .story-hero-video-play { right:18px; bottom:18px; width:40px; height:40px; } }
 @media (max-width: 480px) { .story-hero-center-copy { width:min(88%, 340px); } .story-hero-center-card .story-hero-center-copy { width:min(86%, 320px); max-width:320px; } .story-hero-title { font-size:clamp(25px, 8.4vw, 34px); } .story-hero-video-play { right:14px; bottom:14px; width:38px; height:38px; } }
