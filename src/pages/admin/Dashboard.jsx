@@ -1,0 +1,3 @@
+import React from 'react';
+import InnerBanner from '../../components/common/InnerBanner.jsx';
+export default function Dashboard() { return <><InnerBanner eyebrow="Admin" title="Dashboard" paragraph="Admin dashboard for Avenlora products, orders, and customers." /><section className="page-section container"><h2>Admin Dashboard</h2><p>Dashboard layout is ready for admin data integration.</p></section></>; }

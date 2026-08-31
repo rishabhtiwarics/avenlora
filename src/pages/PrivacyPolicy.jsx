@@ -1,0 +1,3 @@
+import React from 'react';
+import InnerBanner from '../components/common/InnerBanner.jsx';
+export default function PrivacyPolicy() { return <><InnerBanner eyebrow="Policy" title="Privacy Policy" paragraph="How Avenlora protects customer details and order information." /><section className="page-section container"><h2>Privacy Policy</h2><p>We collect only the details needed to process orders, support customers, and improve the Avenlora shopping experience. Customer contact and delivery information is handled with care and is not sold to third parties.</p></section></>; }

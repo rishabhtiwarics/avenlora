@@ -1,0 +1,3 @@
+import React from 'react';
+import InnerBanner from '../components/common/InnerBanner.jsx';
+export default function TermsCondition() { return <><InnerBanner eyebrow="Terms" title="Terms & Condition" paragraph="Simple shopping terms for Avenlora perfume orders." /><section className="page-section container"><h2>Terms & Condition</h2><p>Orders are accepted subject to availability, correct pricing, and successful payment confirmation. Fragrance returns and replacements follow hygiene-safe product handling rules.</p></section></>; }

@@ -1,0 +1,3 @@
+import React from 'react';
+import InnerBanner from '../components/common/InnerBanner.jsx';
+export default function Profile() { return <><InnerBanner eyebrow="My Account" title="Profile" paragraph="Manage Avenlora account details, saved perfumes, and order preferences." /><section className="page-section container"><h2>User Profile</h2><p>Your account profile area is ready for backend integration.</p></section></>; }
