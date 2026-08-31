@@ -24,6 +24,7 @@ export default function Home() {
       />
       <ImageBanner
         images={[brandAssets.middleBanner1]}
+        mobileImages={[brandAssets.mobileMiddleBanner1]}
         className="middle-banner"
         to="/shop"
         fullWidth
@@ -36,6 +37,7 @@ export default function Home() {
       />
       <ImageBanner
         images={[brandAssets.middleBanner2]}
+        mobileImages={[brandAssets.mobileMiddleBanner2]}
         className="middle-banner"
         to="/shop"
         fullWidth
