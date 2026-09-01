@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { CartProvider } from './context/CartContext.jsx';
 import Layout from './components/common/Layout.jsx';
@@ -23,6 +23,7 @@ export default function App() {
 
   return (
     <CartProvider>
+      <ScrollToTop pathname={location.pathname} />
       <Layout hideChrome={isAuthPage}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -43,4 +44,12 @@ export default function App() {
       </Layout>
     </CartProvider>
   );
+}
+
+function ScrollToTop({ pathname }) {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, [pathname]);
+
+  return null;
 }

@@ -18,6 +18,7 @@ export default function CartDrawer() {
       {items.length > 0 && (
         <div className="cart-drawer-footer">
           <div className="cart-total"><span>Total</span><strong>₹{subtotal.toLocaleString('en-IN')}</strong></div>
+          <Link className="cart-go-to-cart" to="/cart" onClick={() => setIsCartOpen(false)}>Go to Cart</Link>
           <Link className="primary-btn full" to="/checkout" onClick={() => setIsCartOpen(false)}>Checkout</Link>
         </div>
       )}
